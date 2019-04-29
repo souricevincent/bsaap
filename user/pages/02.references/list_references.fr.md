@@ -1,5 +1,4 @@
 ---
-title: Références
 references:
     -
         title: test
@@ -41,5 +40,6 @@ references:
                 type: image/png
                 size: 13454
                 path: user/pages/images/Vincent.png
+title: Références
 ---
 
