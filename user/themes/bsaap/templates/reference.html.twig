@@ -5,12 +5,18 @@
   <h1>{{ page.title }}</h1>
 
   <div uk-lightbox>
-    {% for image in page.header.gallery %}
-      {{ media['image://' ~ image.name].lightbox(600,400).cropResize(400,400).cropZoom(200,200).html('My title', 'Some ALT text', 'myclass') }}
+    {% for key, image in page.header.gallery %}
+      <a class="uk-inline uk-transition-toggle" rel="lightbox" data-width="600" data-height="400" href="{{ media['image://' ~ image.name].cropResize(600,400).url  }}">
+        <img title="Sample Image" alt="" src="{{ media['image://' ~ image.name].cropResize(400,400).cropZoom(200,200).url  }}" />
+        <div class="uk-overlay-default uk-position-cover uk-transition-fade">
+          <div class="uk-position-center">
+            <span class="uk-transition-fade" uk-icon="icon: search; ratio: 2"></span>
+          </div>
+        </div>
+      </a>
     {% endfor %}
   </div>
 
-  {{ dump(page) }}
   {{ page.content }}
 
 {% endblock %}
