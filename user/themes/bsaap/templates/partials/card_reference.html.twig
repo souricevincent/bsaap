@@ -1,0 +1,9 @@
+<a href="{{ reference.url }}">
+  <div class="uk-card uk-card-default">
+    {{ media['image://' ~ reference.header.gallery|first.name].cropResize(600,400).cropZoom(400,200).html('My title', 'Some ALT text', 'myclass') }}
+    <div class=" uk-card-body">
+      <h4 class="uk-heading-divider">{{ reference.title }}</h4>
+      {{ reference.summary }}
+    </div>
+  </div>
+</a>

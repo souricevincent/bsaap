@@ -1,17 +1,9 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-  <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
-    {% for p in pages.find('/references').children %}
-      <a href="{{ p.url }}">
-        <div class="uk-card uk-card-default">
-          {{ media['image://' ~ p.header.gallery|first.name].cropResize(600,400).cropZoom(400,200).html('My title', 'Some ALT text', 'myclass') }}
-          <div class=" uk-card-body">
-            <h4 class="uk-heading-divider">{{ p.title }}</h4>
-            {{ p.summary }}
-          </div>
-        </div>
-      </a>
+  <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid>
+    {% for reference in pages.find('/references').children %}
+      {% include 'partials/card_reference.html.twig' with {'reference': reference} %}
     {% endfor %}
   </div>
 {% endblock %}
