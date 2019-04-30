@@ -1,0 +1,16 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+  <h1>{{ page.title }}</h1>
+
+  <div uk-lightbox>
+    {% for image in page.header.gallery %}
+      {{ media['image://' ~ image.name].lightbox(600,400).cropResize(400,400).cropZoom(200,200).html('My title', 'Some ALT text', 'myclass') }}
+    {% endfor %}
+  </div>
+
+  {{ dump(page) }}
+  {{ page.content }}
+
+{% endblock %}

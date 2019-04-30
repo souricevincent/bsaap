@@ -1,0 +1,113 @@
+extends@: default
+
+form:
+  validation: loose
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+
+          fields:
+
+            header.references:
+              name: references
+              type: list
+              style: vertical
+              label: Références
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  validate:
+                    required: true
+                .image:
+                  type: file
+                  label: Image
+                  destination: 'page@:/images'
+                  multiple: false
+                  limit: 1
+                  filesize: 1
+                  accept:
+                    - image/*
+                header.taxonomy:
+                  type: taxonomy
+                  label: PLUGIN_ADMIN.TAXONOMY
+                  multiple: true
+                  validate:
+                    required: true
+#                .primary:
+#                  type: toggle
+#                  label: Primary
+#                  highlight: 1
+#                  default: 1
+#                  options:
+#                    1: 'Yes'
+#                    0: 'No'
+#                  validate:
+#                    type: bool
+
+        options:
+          type: tab
+          title: PLUGIN_ADMIN.OPTIONS
+
+          fields:
+
+            columns:
+              type: columns
+
+              fields:
+                column1:
+                  type: column
+
+                  fields:
+
+                    ordering:
+                      type: toggle
+                      label: PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX
+                      help: PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX_HELP
+                      highlight: 1
+                      options:
+                        1: PLUGIN_ADMIN.ENABLED
+                        0: PLUGIN_ADMIN.DISABLED
+                      validate:
+                        type: bool
+
+                    folder:
+                      type: text
+                      label: PLUGIN_ADMIN.FILENAME
+                      validate:
+                        rule: slug
+                        required: true
+
+                    route:
+                      type: parents
+                      label: PLUGIN_ADMIN.PARENT
+                      classes: fancy
+                      validate:
+                        required: true
+
+                    name:
+                      type: select
+                      classes: fancy
+                      label: PLUGIN_ADMIN.MODULAR_TEMPLATE
+                      default: default
+                      data-options@: '\Grav\Plugin\AdminPlugin::pagesModularTypes'
+                      validate:
+                        required: true
+
+                column2:
+                  type: column
+
+                  fields:
+                    order:
+                      type: order
+                      label: PLUGIN_ADMIN.ORDERING
+
+            blueprint:
+              type: blueprint

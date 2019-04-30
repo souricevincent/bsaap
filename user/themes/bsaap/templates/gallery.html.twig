@@ -1,0 +1,18 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+  <div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid="masonry: true">
+    {% for reference in page.header.references %}
+      <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle">
+        {{ dump(reference) }}
+        {{ reference.title }}
+        {% for image in reference.image %}
+          {{ dump(image) }}
+          {{ page.find('/images').media[image["name"]].lightbox(600,400).resize(200,200).html('My title', 'Some ALT text', 'myclass') }}
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+
+  {{ page.content }}
+{% endblock %}

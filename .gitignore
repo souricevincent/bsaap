@@ -25,6 +25,8 @@ user/plugins/*
 !user/plugins/.*
 user/themes/*
 !user/themes/.*
+!user/themes/bsaap*
+user/themes/bsaap/node_modules
 user/localhost/config/security.yaml
 user/config/security.yaml
 
