@@ -1,7 +1,7 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-  <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid>
+  <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="masonry: true">
     {% for reference in pages.find('/references').children %}
       {% include 'partials/card_reference.html.twig' with {'reference': reference} %}
     {% endfor %}
