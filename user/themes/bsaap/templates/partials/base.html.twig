@@ -48,8 +48,8 @@
           <div uk-navbar>
             <div class="uk-navbar-left">
               <a class="uk-navbar-item uk-logo" href="{{ base_url == '' ? '/' : base_url }}">
-                <i class="fa fa-rebel"></i>
-                {{ config.site.title }}
+                {#{{ page.media['theme://src/images/logo-bsaap.svg'].html() }}#}
+                <img src="{{ page.media['theme://src/images/logo-bsaap.svg'].url }}" alt="logo {{ config.site.title }}" uk-svg>
               </a>
               {% include 'partials/navigation.html.twig' %}
             </div>
