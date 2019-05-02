@@ -1,5 +1,5 @@
 ---
-title: Contact
+title: Contactez-nous
 slug: contact
 form:
     name: contact
@@ -7,8 +7,8 @@ form:
         name:
             classes: uk-input
             outerclasses: uk-margin
-            label: Name
-            placeholder: 'Enter your name'
+            label: Nom
+            placeholder: 'Entrer votre nom'
             autocomplete: 'on'
             type: text
             class: super
@@ -18,7 +18,7 @@ form:
             classes: uk-input
             outerclasses: uk-margin
             label: Email
-            placeholder: 'Enter your email address'
+            placeholder: 'Entrer votre email'
             type: email
             validate:
                 required: true
@@ -26,7 +26,7 @@ form:
             classes: uk-textarea
             outerclasses: uk-margin
             label: Message
-            placeholder: 'Enter your message'
+            placeholder: 'Entrer votre message'
             type: textarea
             validate:
                 required: true
@@ -38,7 +38,7 @@ form:
         submit:
             classes: 'uk-button uk-button-default uk-margin-left'
             type: submit
-            value: Submit
+            value: Envoyer
     process:
         save:
             fileprefix: contact-
