@@ -7,14 +7,20 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-  <h1 class="uk-heading-divider">Nos références</h1>
-  <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid="masonry: true">
-    {% for reference in collection %}
-      {% include 'partials/card_reference.html.twig' with {'reference': reference} %}
-    {% endfor %}
-  </div>
+  <div class="uk-section uk-section-default">
+    <div class="uk-container uk-container-small">
+      <h1>{{ page.title }}</h1>
+      <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid="masonry: true; parallax: 50">
+        {% for reference in collection %}
+          <div>
+            {% include 'partials/card_reference.html.twig' with {'reference': reference} %}
+          </div>
+        {% endfor %}
+      </div>
 
-  {% if config.plugins.pagination.enabled and collection.params.pagination %}
-    {% include 'partials/pagination.html.twig' with {'base_url': page.url, 'pagination': collection.params.pagination} %}
-  {% endif %}
+      {% if config.plugins.pagination.enabled and collection.params.pagination %}
+        {% include 'partials/pagination.html.twig' with {'base_url': page.url, 'pagination': collection.params.pagination} %}
+      {% endif %}
+    </div>
+  </div>
 {% endblock %}

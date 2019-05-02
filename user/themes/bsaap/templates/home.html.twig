@@ -1,26 +1,36 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-
-  <h1>{{ pages.find('/references').menu }}</h1>
-  <div class="uk-position-relative" uk-slider="autoplay: true">
-    <div class="uk-slider-container">
-      <ul class="uk-slider-items uk-child-width-1-3@s uk-child-width-1-4@ uk-grid">
-        {% for reference in pages.find('/references').children|slice(0, 4) %}
-          <li>
-            {% include 'partials/card_reference.html.twig' with {'reference': reference} %}
-          </li>
-        {% endfor %}
-      </ul>
-      <a class="uk-position-center-left uk-position-small uk-hidden-hover uk-icon-button" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-      <a class="uk-position-center-right uk-position-small uk-hidden-hover uk-icon-button" href="#" uk-slidenav-next uk-slider-item="next"></a>
-      <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+  <div class="uk-section uk-section-default">
+    <div class="uk-container uk-container-small uk-margin">
+      <h1 class="uk-heading-line uk-text-center"><span>{{ page.title }}</span></h1>
+      {{ page.content }}
     </div>
   </div>
 
-  <div class="uk-text-center uk-margin">
-    <a class="uk-button uk-button-default" href="{{ pages.find('/references').url }}">Voir plus de {{ pages.find('/references').menu }}</a>
-  </div>
+  <div class="uk-section-small uk-section-muted">
+    <div class="uk-container uk-container-small">
 
-  {{ page.content }}
+      <h2>{{ pages.find('/references').title }}</h2>
+      <div class="uk-position-relative" uk-slider="autoplay: true">
+        <div class="uk-slider-container">
+          <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-grid uk-flex uk-flex-middle">
+            {% for reference in pages.find('/references').children|slice(0, 4) %}
+              <li>
+                {% include 'partials/card_reference.html.twig' with {'reference': reference} %}
+              </li>
+            {% endfor %}
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover uk-icon-button" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover uk-icon-button" href="#" uk-slidenav-next uk-slider-item="next"></a>
+          <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+        </div>
+      </div>
+
+      <div class="uk-text-center uk-margin">
+        <a class="uk-button uk-button-default" href="{{ pages.find('/references').url }}">Voir plus de {{ pages.find('/references').menu }}</a>
+      </div>
+
+    </div>
+  </div>
 {% endblock %}

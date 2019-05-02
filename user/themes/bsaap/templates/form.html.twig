@@ -1,0 +1,20 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+
+  <div class="uk-section uk-section-default">
+    <div class="uk-container uk-container-small">
+      <div class="uk-child-width-1-2@s" uk-grid>
+        <div>
+          {% include "forms/form.html.twig" with {
+            'form_button_outer_classes': 'uk-margin uk-flex uk-flex-right'
+          } %}
+        </div>
+        <div>
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

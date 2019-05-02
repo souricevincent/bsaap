@@ -1,16 +1,14 @@
-<div>
-  <div class="uk-card uk-card-default">
-    <div class="uk-card-media-top">
-      {{ media['image://' ~ reference.header.gallery|first.name].cropResize(600,400).cropZoom(400,200).html('My title', 'Some ALT text', 'myclass') }}
-    </div>
-    <div class="uk-card-header">
-      <h4>{{ reference.title }}</h4>
-    </div>
-    <div class=" uk-card-body">
-      {{ reference.summary(140) }}
-    </div>
-    <div class="uk-card-footer">
-      <a href="{{ reference.url }}" class="uk-button uk-button-text">Lire d'avantage</a>
-    </div>
+<div class="uk-card uk-card-default">
+  <div class="uk-card-media-top">
+    {{ media['image://' ~ reference.header.gallery|first.name].cropResize(640,400).html('My title', 'Some ALT text', 'myclass') }}
+  </div>
+  <div class="uk-card-header">
+    <h4>{{ reference.title }}</h4>
+  </div>
+  <div class=" uk-card-body">
+    {{ reference.summary(140) }}
+  </div>
+  <div class="uk-card-footer">
+    <a href="{{ reference.url }}" class="uk-button uk-button-text">Lire d'avantage</a>
   </div>
 </div>

@@ -14,23 +14,12 @@
     <link rel="canonical" href="{{ page.url(true, true) }}"/>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700" rel="stylesheet">
 
-    {#{% block stylesheets %}#}
-    {#{% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %}#}
-    {#{% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}#}
-    {#{% do assets.addCss('theme://css/custom.css', 98) %}#}
-    {#{% endblock %}#}
-    {#{{ assets.css() }}#}
-
     {% block stylesheets %}
-      {{ webpacker('inline.css', {'loading':'inline'}) }}
+      {#{{ webpacker('inline.css', {'loading':'inline'}) }}#}
       {{ webpacker('app.css') }}
     {% endblock %}
     {{ assets.css }}
 
-    {#{% block javascripts %}#}
-    {#{% do assets.addJs('jquery', 100) %}#}
-    {#{% endblock %}#}
-    {#{{ assets.js() }}#}
     {% block javascripts %}
       {{ webpacker('app.js') }}
     {% endblock %}
@@ -43,12 +32,11 @@
 {% block header %}
   <header>
     {% block header_navigation %}
-      <nav class="uk-navbar-container uk-margin">
+      <nav class="uk-navbar-container">
         <div class="uk-container uk-container-small">
           <div uk-navbar>
             <div class="uk-navbar-left">
               <a class="uk-navbar-item uk-logo" href="{{ base_url == '' ? '/' : base_url }}">
-                {#{{ page.media['theme://src/images/logo-bsaap.svg'].html() }}#}
                 <img src="{{ page.media['theme://src/images/logo-bsaap.svg'].url }}" alt="logo {{ config.site.title }}" uk-svg>
               </a>
               {% include 'partials/navigation.html.twig' %}
@@ -63,21 +51,17 @@
 
 {% block body %}
   <section id="body">
-    <div class="uk-section uk-section-default">
-      <div class="uk-container uk-container-small">
-        {% block content %}{% endblock %}
-      </div>
-    </div>
+    {% block content %}{% endblock %}
   </section>
 {% endblock %}
 
 {% block footer %}
-  <div class="footer text-center">
-    <div class="wrapper padding">
+  <footer class="uk-section-small uk-section-secondary">
+    <div class="uk-container uk-container-small">
       <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a
           href="http://www.rockettheme.com">RocketTheme</a>.</p>
     </div>
-  </div>
+  </footer>
 {% endblock %}
 
 {% block bottom %}
