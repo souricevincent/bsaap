@@ -41,7 +41,7 @@
 
   {% endblock head %}
 </head>
-<body id="top" class="{{ page.header.body_classes }}">
+<body class="{{ page.header.body_classes }}">
 
 {% block header %}
   <header>
@@ -64,7 +64,7 @@
 {% endblock %}
 
 {% block body %}
-  <section id="body">
+  <section>
     {% block content %}{% endblock %}
   </section>
 {% endblock %}
