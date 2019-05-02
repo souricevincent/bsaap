@@ -18,9 +18,7 @@
         {% endif %}
       </div>
 
-      <h1>{{ page.title }}</h1>
-
-      <div uk-lightbox>
+      <div class="uk-margin" uk-lightbox>
         {% for key, image in page.header.gallery %}
           <a class="uk-inline uk-transition-toggle" rel="lightbox" data-width="600" data-height="400" href="{{ media['image://' ~ image.name].cropResize(600,400).url  }}">
             <img title="Sample Image" alt="" src="{{ media['image://' ~ image.name].cropResize(400,400).cropZoom(200,200).url  }}" />
@@ -33,7 +31,13 @@
         {% endfor %}
       </div>
 
-      {{ page.content }}
+      <article class="uk-article">
+        <h1 class="uk-article-title">{{ page.title }}</h1>
+        <p class="uk-article-meta">
+        </p>
+        {{ page.content }}
+      </article>
+
     </div>
   </div>
 {% endblock %}

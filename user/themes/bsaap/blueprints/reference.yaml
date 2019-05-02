@@ -36,7 +36,7 @@ form:
               label: Gallery d'images
               destination: 'image://'
               multiple: true
-              limit: 6
+              limit: 5
               filesize: 1
               accept:
                 - image/*
