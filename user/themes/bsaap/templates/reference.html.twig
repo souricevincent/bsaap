@@ -18,17 +18,30 @@
         {% endif %}
       </div>
 
-      <div class="uk-margin" uk-lightbox>
-        {% for key, image in page.header.gallery %}
-          <a class="uk-inline uk-transition-toggle" rel="lightbox" data-width="600" data-height="400" href="{{ media['image://' ~ image.name].cropResize(600,400).url  }}">
-            <img title="Sample Image" alt="" src="{{ media['image://' ~ image.name].cropResize(400,400).cropZoom(200,200).url  }}" />
-            <div class="uk-overlay-default uk-position-cover uk-transition-fade">
-              <div class="uk-position-center">
-                <span class="uk-transition-fade" uk-icon="icon: search; ratio: 2"></span>
-              </div>
-            </div>
-          </a>
-        {% endfor %}
+      <div class="uk-margin" tabindex="-1" uk-slider="center: true">
+        <div class="uk-position-relative">
+          <div uk-lightbox>
+            <ul class="uk-slider-items uk-flex uk-flex-middle">
+              {% for key, image in page.header.gallery %}
+                <li class="uk-width-2-3@m uk-flex uk-flex-center">
+                  <a class="uk-inline uk-transition-toggle" rel="lightbox" data-width="600" data-height="400" href="{{ media['image://' ~ image.name].cropResize(1200).url  }}">
+                    <img title="Sample Image" alt="" src="{{ media['image://' ~ image.name].cropResize(600, 400).url  }}" />
+                    <div class="uk-overlay-default uk-position-cover uk-transition-fade">
+                      <div class="uk-position-center">
+                        <span class="uk-transition-fade" uk-icon="icon: search; ratio: 2"></span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover uk-icon-button" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover uk-icon-button" href="#" uk-slidenav-next uk-slider-item="next"></a>
+        </div>
+
+        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
       </div>
 
       <article class="uk-article">
