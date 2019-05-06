@@ -34,7 +34,7 @@ form:
             header.gallery:
               type: file
               label: Gallery d'images
-              destination: 'image://'
+              destination: 'self@'
               multiple: true
               limit: 5
               filesize: 1
