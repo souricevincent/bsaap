@@ -30,17 +30,52 @@ form:
               style: vertical
               label: PLUGIN_ADMIN.TITLE
 
-
             header.gallery:
-              type: file
-              label: Gallery d'images
-              destination: 'self@'
-              multiple: true
-              limit: 5
-              filesize: 1
-              accept:
-                - image/*
+              label: 'Gallerie (min : 1)'
+              help: Vous devez mettre au moins une image
+              name: gallery
+              type: list
+              style: vertical
+              btnLabel: Ajouter une image
+              min: 1
+              max: 5
+              fields:
+                .image:
+                  type: filepicker
+                  help: Vous devez ajouter l'image en bas de page avant de pouvoir la sélectionner ici
+                  folder: '@self'
+                  preview_images: true
+                  label: Selectionner une image &#128270;
+                  accept:
+                    - .png
+                    - .jpg
+                .text:
+                  type: text
+                  label: Déscription
+#                .primary:
+#                  type: toggle
+#                  label: Primary
+#                  highlight: 1
+#                  default: 1
+#                  options:
+#                    1: 'Yes'
+#                    0: 'No'
+#                  validate:
+#                    type: bool
 
+#            header.gallery:
+#              type: file
+#              label: Gallery d'images
+##              destination: 'image://references/'
+#              destination: '@self'
+#              multiple: true
+#              limit: 5
+#              filesize: 1
+#              accept:
+#                - image/*
+            header.resume:
+              type: textarea
+              label: Résumé
             content:
               label: Contenu
               type: markdown

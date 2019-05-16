@@ -1,8 +1,6 @@
 {% set collection = page.find('/references').children %}
 {% set limit = 6 %}
-{% do paginate( collection, limit ) %}
-{#{% set ignore_url_param_array = [ 'event' ] %}#}
-{#{% do paginate( collection, limit, ignore_url_param_array ) %}#}
+{% do paginate(collection, limit) %}
 
 {% extends 'partials/base.html.twig' %}
 
