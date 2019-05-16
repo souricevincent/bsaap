@@ -1,12 +1,12 @@
 <div class="uk-card uk-card-default">
   <div class="uk-card-media-top">
-    {{ reference.media[reference.header.gallery|first.name].cropResize(640,400).html('My title', 'Some ALT text', 'myclass') }}
+    {{ reference.media[reference.header.gallery|first.image].cropResize(640,400).html('My title', reference.header.gallery|first.text, 'myclass') }}
   </div>
   <div class="uk-card-header">
     <h4>{{ reference.title }}</h4>
   </div>
   <div class=" uk-card-body">
-    {{ reference.summary(140) }}
+    {{ reference.header.resume|truncate(140) }}
   </div>
   <div class="uk-card-footer">
     <a href="{{ reference.url }}" class="uk-button uk-button-text">Lire d'avantage</a>
