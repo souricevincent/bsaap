@@ -72,8 +72,17 @@
 {% block footer %}
   <footer class="uk-section-small uk-section-secondary">
     <div class="uk-container uk-container-small">
-      <p><a href="http://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> by <a
-          href="http://www.rockettheme.com">RocketTheme</a>.</p>
+      {% set contact = page.find('/form') %}
+      <div>
+        <a href="tel:{{ contact.header.phone }}">
+          <span uk-icon="receiver"></span>
+          {{ contact.header.phone }}
+        </a>
+      </div>
+      <a href="mailto:{{ contact.header.email }}">
+        <span uk-icon="mail"></span>
+        {{ contact.header.email }}
+      </a>
     </div>
   </footer>
 {% endblock %}

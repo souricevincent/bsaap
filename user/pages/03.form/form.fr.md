@@ -1,5 +1,7 @@
 ---
 title: Contactez-nous
+phone: '0911237640'
+email: bsabonnard@gmail.com
 slug: contact
 form:
     name: contact
