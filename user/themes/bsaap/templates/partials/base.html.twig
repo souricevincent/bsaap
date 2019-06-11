@@ -73,16 +73,16 @@
   <footer class="uk-section-small uk-section-secondary">
     <div class="uk-container uk-container-small">
       {% set contact = page.find('/form') %}
-      <div>
-        <a href="tel:{{ contact.header.phone }}">
+      <div class="uk-flex uk-flex-center">
+        <a class="uk-link-muted uk-margin-left uk-margin-right" href="tel:{{ contact.header.phone }}">
           <span uk-icon="receiver"></span>
           {{ contact.header.phone }}
         </a>
+        <a class="uk-link-muted uk-margin-left uk-margin-right" href="mailto:{{ contact.header.email }}">
+          <span uk-icon="mail"></span>
+          {{ contact.header.email }}
+        </a>
       </div>
-      <a href="mailto:{{ contact.header.email }}">
-        <span uk-icon="mail"></span>
-        {{ contact.header.email }}
-      </a>
     </div>
   </footer>
 {% endblock %}
