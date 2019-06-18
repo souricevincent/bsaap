@@ -30,7 +30,7 @@ form:
               style: vertical
               label: PLUGIN_ADMIN.TITLE
 
-            header.gallery:
+            header.categories:
               label: 'Gallerie (min : 1)'
               help: Vous devez mettre au moins une image
               name: gallery
@@ -49,10 +49,11 @@ form:
                   accept:
                     - .png
                     - .jpg
+                    - .jpeg
                 .text:
                   type: text
                   label: Déscription
-                .categorie:
+                .category:
                   type: select
                   label: 'Sélectionner une ou plusieurs catégories'
                   multiple: true
@@ -61,7 +62,15 @@ form:
                     facade: 'Facade'
                     gondola: 'Gondole'
                     specialFurniture: 'Meubles spéciaux'
-                    signaletique: 'Signalétique'
+                    signage: 'Signalétique'
+                  validate:
+                    type: array
+#                .taxonomy:
+#                  type: taxonomy
+#                  label: PLUGIN_ADMIN.TAXONOMY
+#                  multiple: true
+#                  validate:
+#                    type: array
 
             #                .primary:
             #                  type: toggle
