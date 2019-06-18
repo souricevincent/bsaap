@@ -4,7 +4,7 @@
   <div class="uk-section uk-section-default">
     <div class="uk-container uk-container-small">
 
-      {% set refs_collection = page.collection({'items': {'@page': '/references'}}) %}
+      {% set refs_collection = page.collection({'items': {'@page': '/references/officines'}}) %}
 
       <div class="uk-flex uk-flex-wrap uk-flex-center">
         {% if not refs_collection.isFirst(page.path) %}

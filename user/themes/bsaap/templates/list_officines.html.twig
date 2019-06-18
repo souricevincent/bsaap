@@ -1,4 +1,4 @@
-{% set collection = page.find('/references').children %}
+{% set collection = page.find('/references/officines').children %}
 {% set limit = 6 %}
 {% do paginate(collection, limit) %}
 
