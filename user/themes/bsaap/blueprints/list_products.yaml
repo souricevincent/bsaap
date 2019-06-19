@@ -30,7 +30,7 @@ form:
               style: vertical
               label: PLUGIN_ADMIN.TITLE
 
-            header.categories:
+            header.products:
               label: 'Categories (min : 1)'
               help: Vous devez mettre au moins une image
               name: categories

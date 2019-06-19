@@ -6,7 +6,7 @@
 
       {% set refs_collection = page.collection({'items': {'@page': '/references'}}) %}
 
-      <div class="uk-flex uk-flex-wrap uk-flex-center">
+      <div class="uk-flex uk-flex-wrap uk-flex-center uk-margin-bottom">
         {% if not refs_collection.isFirst(page.path) %}
           <a class="uk-icon-button uk-margin-left uk-margin-right" href="{{ refs_collection.nextSibling(page.path).url }}" uk-icon="chevron-left" uk-tooltip="title: Référence précédente; pos: bottom"></a>
         {% endif %}
