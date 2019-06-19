@@ -1,4 +1,4 @@
-{% set options = { items: {'@page.children': '/references/officines'}, 'limit': 4, 'order': {'by': 'date', 'dir': 'asc'} } %}
+{% set options = { items: {'@page.children': '/officines'}, 'limit': 4, 'order': {'by': 'date', 'dir': 'asc'} } %}
 {% set latest_references_collection = page.collection(options) %}
 
 <div class="uk-section-small uk-section-muted">
@@ -20,7 +20,7 @@
     </div>
 
     <div class="uk-text-center uk-margin">
-      <a class="uk-button uk-button-default" href="{{ page.find('/references/officines').url }}">Voir plus de références</a>
+      <a class="uk-button uk-button-default" href="{{ page.find('/officines').url }}">Voir plus de références</a>
     </div>
 
   </div>
