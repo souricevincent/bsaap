@@ -1,7 +1,9 @@
 {{ dump(reference.date|date("m/d/Y")) }}
 <div class="uk-card uk-card-default">
   <div class="uk-card-media-top">
-    {{ reference.media[reference.header.gallery|first.image].cropResize(640,400).html('My title', reference.header.gallery|first.text, 'myclass') }}
+    <div class="util-containerForImgCover uk-height-small">
+      {{ reference.media[reference.header.gallery|first.image].cropResize(640,400).html(reference.header.gallery|first.text, reference.header.gallery|first.text, 'myclass') }}
+    </div>
   </div>
   <div class="uk-card-header">
     <h4>{{ reference.title }}</h4>

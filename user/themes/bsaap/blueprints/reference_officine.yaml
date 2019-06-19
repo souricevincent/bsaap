@@ -30,6 +30,10 @@ form:
               style: vertical
               label: PLUGIN_ADMIN.TITLE
 
+            header.location:
+              type: text
+              label: Localisation
+
             header.gallery:
               label: 'Gallerie (min : 1)'
               help: Vous devez mettre au moins une image
@@ -73,6 +77,7 @@ form:
 #              filesize: 1
 #              accept:
 #                - image/*
+
             header.resume:
               type: textarea
               label: Résumé

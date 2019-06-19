@@ -31,14 +31,15 @@ form:
               label: PLUGIN_ADMIN.TITLE
 
             header.categories:
-              label: 'Gallerie (min : 1)'
+              label: 'Categories (min : 1)'
               help: Vous devez mettre au moins une image
-              name: gallery
+              name: categories
               type: list
+              collapsed: true
               style: vertical
               btnLabel: Ajouter une image
               min: 1
-              max: 5
+              max: 500
               fields:
                 .image:
                   type: filepicker
@@ -50,9 +51,6 @@ form:
                     - .png
                     - .jpg
                     - .jpeg
-                .text:
-                  type: text
-                  label: Déscription
                 .category:
                   type: select
                   label: 'Sélectionner une ou plusieurs catégories'
@@ -65,6 +63,9 @@ form:
                     signage: 'Signalétique'
                   validate:
                     type: array
+                .text:
+                  type: text
+                  label: Déscription
 #                .taxonomy:
 #                  type: taxonomy
 #                  label: PLUGIN_ADMIN.TAXONOMY
