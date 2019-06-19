@@ -1,0 +1,11 @@
+{
+  "BUILD_INFORMATIONS": {
+    "date": "6/19/2019, 5:12:01 PM",
+    "theme": "Bsaap - v0.1.0",
+    "description": "Theme for officines"
+  },
+  "app.css": "/user/themes/bsaap/assets/css/app.d8d63c04845b225388f5.css",
+  "app.js": "/user/themes/bsaap/assets/js/app.42e4b14e54e03f834087.js",
+  "manifest.js": "/user/themes/bsaap/assets/js/manifest.ffe045c4b442f8a78a29.js",
+  "vendors.js": "/user/themes/bsaap/assets/js/vendors.6b5ca46581589a93f649.js"
+}
