@@ -4,14 +4,14 @@
   <div class="uk-section uk-section-default">
     <div class="uk-container uk-container-small">
 
-      {% set refs_collection = page.collection({'items': {'@page': '/officines'}}) %}
+      {% set refs_collection = page.collection({'items': {'@page': '/references'}}) %}
 
       <div class="uk-flex uk-flex-wrap uk-flex-center">
         {% if not refs_collection.isFirst(page.path) %}
           <a class="uk-icon-button uk-margin-left uk-margin-right" href="{{ refs_collection.nextSibling(page.path).url }}" uk-icon="chevron-left" uk-tooltip="title: Référence précédente; pos: bottom"></a>
         {% endif %}
 
-        <a class="uk-icon-button uk-margin-left uk-margin-right" href="{{ pages.find('/officines').url }}" uk-icon="list" uk-tooltip="title: Retour à la liste des références; pos: bottom"></a>
+        <a class="uk-icon-button uk-margin-left uk-margin-right" href="{{ pages.find('/references').url }}" uk-icon="list" uk-tooltip="title: Retour à la liste des références; pos: bottom"></a>
 
         {% if not refs_collection.isLast(page.path) %}
           <a class="uk-icon-button uk-margin-left uk-margin-right" href="{{ refs_collection.prevSibling(page.path).url }}" uk-icon="chevron-right" uk-tooltip="title: Référence suivante; pos: bottom"></a>
